@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BROTEN</title>
+</head>
+<body>
+    <h1>PRODUCTOS</h1>
+    <button type="submit"><a href="listar.php">LISTAR</a></button>
+
+    <h2>Agregar productos</h2>
+    <p>Ingrese los datos del producto.</p>
+
+
+    <form method="POST" action="agregar.php" enctype="multipart/form-data">
+        <label>Producto</label>
+        <input type="text" name="producto" placeholder="producto" required>
+        <label>Ingredientes</label>
+        <input type="text" name="ingredientes" placeholder="ingredientes" required>
+        <label>Contenido</label>
+        <input type="text" name="contenido" placeholder="contenido" required>
+        <label>Precio</label>
+        <input type="text" name="precio" placeholder="Precio" required>
+        <label>Imagen</label>
+        <input type="file" name="imagen" placeholder="imagen">
+        <input type="submit" name="submit" value="Ingresar">
+    </form>
+
+
+</body>
+</html>
