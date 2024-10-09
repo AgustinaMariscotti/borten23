@@ -1,6 +1,9 @@
 <?php
-$conexion = mysqli_connect("127.0.0.1","root","");
-
+ $conexion = mysqli_connect("sql111.byethost7.com", "b7_37427571","flackerhost","b7_37427571_broten");
+if (!$conexion) {
+    die("Conexión fallida: " . mysqli_connect_error());
+}
+mysqli_set_charset($conexion, "utf8mb4");
   $producto = $_POST ['producto'];
   $ingredientes = $_POST['ingredientes'];
   $contenido = $_POST['contenido'];
@@ -9,8 +12,8 @@ $conexion = mysqli_connect("127.0.0.1","root","");
    $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
 
 $consulta = "INSERT INTO productos (id,producto,ingredientes,contenido,precio,imagen)
-VALUES ('','$producto','$ingredientes','$contenido','$precio','$imagen')";
-  mysqli_select_db($conexion,"broten");
+VALUES ('','$producto','$ingredientes','$contenido','$precio','$imagen')"; 
   mysqli_query($conexion,$consulta);
   header('location:listar.php');
 ?>
+

@@ -38,8 +38,12 @@
 
 
           <?php
-          $conexion = mysqli_connect("127.0.0.1", "root", "");
-          mysqli_select_db($conexion, "broten");
+       $conexion = mysqli_connect("sql111.byethost7.com", "b7_37427571","flackerhost","b7_37427571_broten");
+       
+         if (!$conexion) {
+          die("Conexión fallida: " . mysqli_connect_error());
+         }
+         mysqli_set_charset($conexion, "utf8mb4");
 
           $consulta="SELECT * FROM `productos` WHERE `producto`LIKE'milanesas%'";
 
@@ -90,7 +94,7 @@
                 </div>
 
               </footer>
-              <a href="index.php #productos"> <img src="./assets/img/flecha.png" alt="inicio" class="flecha" style="transform:rotate(270deg);"></a>
+              <a href="index.php#productos"> <img src="./assets/img/flecha.png" alt="inicio" class="flecha" style="transform:rotate(270deg);"></a>
               <!-- Bootstrap core JS-->
               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
               <!-- Core theme JS-->

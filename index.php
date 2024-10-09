@@ -161,8 +161,16 @@
 
 
           <?php
-          $conexion = mysqli_connect("127.0.0.1", "root", "");
-          mysqli_select_db($conexion, "broten");
+          ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+
+          $conexion = mysqli_connect("sql111.byethost7.com", "b7_37427571","flackerhost","b7_37427571_broten");
+       
+         if (!$conexion) {
+          die("Conexión fallida: " . mysqli_connect_error());
+         }
+         mysqli_set_charset($conexion, "utf8mb4");
 
           $consulta= "SELECT*FROM productos";
 
